@@ -47,17 +47,17 @@
     </table>
 
     <script>
-        var newLine = true;
+        function digitBtnPressed(value) {
+            document.getElementById("inputBox").value += value;
+        }
 
-        function digitBtnPressed(button) {
+        function clearInput() {
+            document.getElementById("inputBox").value = "";
+        }
 
-            if(newLine) {
-                document.getElementById("inputBox").value = button;
-            } else{
-            var currentValue = document.getElementById("inputBox").value;
-            document.getElementById("inputBox").value = currentValue + button;
-            newLine = false;
-            }
+        function calculateResult() {
+            let input = document.getElementById("inputBox").value;
+            document.getElementById("inputBox").value = eval(input);
         }
     </script>
 </body>
