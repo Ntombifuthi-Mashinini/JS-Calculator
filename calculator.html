@@ -15,49 +15,49 @@
         </tr>
 
         <tr>
-            <td onclick="digitBtnPressed('7')">7</td>
-            <td onclick="digitBtnPressed('8')">8</td>
-            <td onclick="digitBtnPressed('9')">9</td>
-            <td onclick="digitBtnPressed('*')">x</td>
+            <td onclick="digitBtnPressed(7)">7</td>
+            <td onclick="digitBtnPressed(8)">8</td>
+            <td onclick="digitBtnPressed(9)">9</td>
+            <td>x</td>
         </tr>
 
         <tr>
-            <td onclick="digitBtnPressed('4')">4</td>
-            <td onclick="digitBtnPressed('5')">5</td>
-            <td onclick="digitBtnPressed('6')">6</td>
-            <td onclick="digitBtnPressed('-')">-</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>-</td>
         </tr>
 
         <tr>
-            <td onclick="digitBtnPressed('1')">1</td>
-            <td onclick="digitBtnPressed('2')">2</td>
-            <td onclick="digitBtnPressed('3')">3</td>
-            <td onclick="digitBtnPressed('+')">+</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>+</td>
         </tr>
 
         <tr>
-            <td colspan="2" onclick="digitBtnPressed('0')">0</td>
-            <td onclick="clearInput()">AC</td>
-            <td onclick="digitBtnPressed('/')">/</td>
+            <td colspan="2">0</td>
+            <td>AC</td>
+            <td>/</td>
         </tr>
 
         <tr>
-            <td colspan="4" onclick="calculateResult()">=</td>
+            <td colspan="4">=</td>
         </tr>
     </table>
 
     <script>
-        function digitBtnPressed(value) {
-            document.getElementById("inputBox").value += value;
-        }
+        var newLine = true;
 
-        function clearInput() {
-            document.getElementById("inputBox").value = "";
-        }
+        function digitBtnPressed(button) {
 
-        function calculateResult() {
-            let input = document.getElementById("inputBox").value;
-            document.getElementById("inputBox").value = eval(input);
+            if(newLine) {
+                document.getElementById("inputBox").value = button;
+            } else{
+            var currentValue = document.getElementById("inputBox").value;
+            document.getElementById("inputBox").value = currentValue + button;
+            newLine = false;
+            }
         }
     </script>
 </body>
