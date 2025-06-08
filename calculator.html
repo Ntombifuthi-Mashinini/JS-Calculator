@@ -5,60 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Calculator</title>
     <style>
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        table {
-            border-collapse: collapse;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+    table {
+      width: 90vw;
+      max-width: 400px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
 
-        tr {
-            height: 60px;
-        }
+    tr {
+      height: 60px;
+    }
 
-        td {
-            width: 60px;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-            font-size: 20px;
-            border: 1px solid #ccc;
-            transition: background-color 0.3s;
-        }
+    td {
+      width: 25%;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border: 1px solid #ccc;
+      transition: background-color 0.3s;
+      padding: 15px;
+    }
 
-        td:hover {
-            background-color: #f0f0f0;
-        }
+    td:hover {
+      background-color: #f0f0f0;
+    }
 
-        .digitButton {
-            background-color: #e0f7fa;
-        }
+    .digitButton {
+      background-color: #e0f7fa;
+    }
 
-        .operatorButton {
-            background-color: #ffe0b2;
-        }
+    .operatorButton {
+      background-color: #ffe0b2;
+    }
 
-        .ACButton {
-            background-color: #ffcdd2;
-        }
+    .ACButton {
+      background-color: #ffcdd2;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 20px;
-            font-size: 24px;
-            text-align: right;
-            border: none;
-            outline: none;
-            box-sizing: border-box;
-        }
+    input[type="text"] {
+      width: 100%;
+      padding: 20px;
+      font-size: 2rem;
+      text-align: right;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 600px) {
+      td {
+        font-size: 1.2rem;
+        padding: 10px;
+      }
+
+      input[type="text"] {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+
+      tr {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      td {
+        font-size: 1rem;
+        padding: 8px;
+      }
+
+      input[type="text"] {
+        font-size: 1.2rem;
+        padding: 10px;
+      }
+    }
     </style>
 </head>
 <body>
